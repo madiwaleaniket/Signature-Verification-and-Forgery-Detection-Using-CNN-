@@ -1,0 +1,40 @@
+    {% extends 'base.html' %}
+{% block title %}Results{% endblock title %}
+{% block body %}
+
+<!-- Login page -->
+<section class="p-5">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="w-75 border border-2 border-dark mx-auto px-5 py-2">
+            <p class="fs-1 text-center fw-bold">Results</p>
+            <div class="row col-lg-12">
+                <div class="col-lg-4 ">
+                    <h6>Uploaded Document</h6><hr>
+                    <img class="img-fluid border border-dark" src="{{verify_data.uploaded_doc.url}}" alt="{{verify_data.uploaded_doc.url}}">
+                </div>
+                <div class="col-lg-8">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Name of Person</th>
+                                <th scope="col">Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td > {{verify_data.pname}} </td>
+                                <td style="color:red;"><b> {{ Not_Identified }} <span style="color:green;">{{ Identified }}</span></b> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="d-flex mx-auto w-25 mt-4">
+                <a class="btn btn-lg btn-outline-dark mb-4" href="dashboard">Go to Dashboard</a>
+            </div>
+        </div>
+    </form>
+</section>
+
+{% endblock body %}

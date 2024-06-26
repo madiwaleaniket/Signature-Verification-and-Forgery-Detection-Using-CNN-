@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock title %}
+{% block body %}
+
+<section class="p-5">
+  <div class="w-75 mx-auto border border-2 border-dark p-5">
+    <div class="d-flex justify-content-center mb-5">
+      <img src="static/img/colynary-media-ZKkuYgbTRl8-unsplash.jpg" alt="" />
+    </div>
+    <p class="text-center">
+      Introducing the revolutionary new website for signature verification!
+      Our cutting-edge platform is designed to provide fast and accurate
+      verification of signatures for individuals, businesses, and
+      organizations alike. Whether you need to confirm the authenticity of a
+      signature on a legal document, check the identity of a signatory on a
+      contract, or simply verify the legitimacy of a handwritten signature,
+      our website has you covered.
+    </p>
+    <div class="d-flex mx-auto w-50 gap-4">
+      {% comment %} <a class="btn btn-lg btn-outline-dark mb-4 w-75" href="upload_sign">Upload Sign</a> {% endcomment %}
+      <a class="btn btn-lg btn-outline-dark mb-4 w-75" href="sign_verify">Verify Sign</a>
+    </div>
+  </div>
+</section>
+{% endblock body %}

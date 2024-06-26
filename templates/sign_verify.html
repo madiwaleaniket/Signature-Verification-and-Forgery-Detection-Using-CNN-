@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Verify Signature{% endblock title %}
+{% block body %}
+
+<section class="p-5">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="w-75 upload-sign mx-auto border border-2 border-dark p-5">
+            <h1 class="text-center">Upload Document for Signature Verification</h1>
+
+            <div class="border border-1 bg-white border-dark rounded-3 w-50 mx-auto d-flex justify-content-left align-items-center m-5 input-container">
+                <label class="border border-1 border-dark bg-dark text-white p-2">Select Person </label>
+                <select name="pname" class="form-select" required>
+                    <option  value="person_not_identified">Select_Person</option>
+                    <option  value="onkar_sign">Omkar</option>
+                    <option  value="aniket_sign">Aniket</option>
+                </select>
+            </div>
+
+            <div
+                class="border border-1 bg-white border-dark rounded-3 w-50 mx-auto d-flex justify-content-left align-items-center m-5 input-container">
+                <label class="border border-1 border-dark bg-dark text-white p-2">Document</label>
+                <input type="file" name="uploaded_doc" class="form-control" id="exampleInputFile">
+  
+            </div>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-dark m-3" type="submit">Verify</button>
+                <a class="btn btn-primary m-3" href="dashboard">Go to Dashboard</a>
+            </div>
+        </div>
+    </form>
+</section>
+
+{% endblock body %}
